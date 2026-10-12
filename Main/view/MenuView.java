@@ -14,7 +14,8 @@ public class MenuView {
             ====================
             1 - Novo Jogo
             2 - Créditos
-            3 - Sair
+            3 - Opções
+            4 - Sair
             ====================
             """);
     }
