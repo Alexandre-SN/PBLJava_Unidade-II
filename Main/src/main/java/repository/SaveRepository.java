@@ -2,6 +2,7 @@ package repository;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import model.Config;
+import model.Conquista;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,21 +14,20 @@ public class SaveRepository {
         this.mapper = mapper;
     }
 
-    public Config ReadConfig(){
+    public <E> E readFile(String caminho, Class<E> classe,E padrao){
 
         try{
-            return mapper.readValue(new File("saves/config.json"), Config.class);
+            return mapper.readValue(new File(caminho), classe);
         }catch (IOException error) {
-            System.err.println("Erro ao ler as configurações: " + error.getMessage());
-            return new Config("0","0","0");
+            System.err.println("Erro ao ler o arquivo: " + error.getMessage());
+            return padrao;
         }
     }
-
-    public void WriteConfig(Config config){
+    public <E> void writeFile(String caminho, E classe){
 
         try {
             mapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File("saves/config.json"),config);
+                    .writeValue(new File(caminho),classe);
 
             System.out.println("Ficheiro JSON guardado com sucesso!");
         } catch (IOException e) {

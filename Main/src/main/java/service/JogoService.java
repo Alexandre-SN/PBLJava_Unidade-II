@@ -60,6 +60,7 @@ public class JogoService {
                 else {
                     jogoAtual.setCenaAtual(null);
                 }
+
 }
 
             if (idProximaCena <= 0) {

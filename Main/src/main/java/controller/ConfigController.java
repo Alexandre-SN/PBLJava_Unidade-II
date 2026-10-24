@@ -46,7 +46,7 @@ public class ConfigController {
                     }
                 case "4":
                     System.out.println("Salvando as configurações...");
-                    this.save.WriteConfig(this.config);
+                    this.save.writeFile("saves/config.json",this.config);
                     break;
             }
         }

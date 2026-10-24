@@ -18,20 +18,20 @@ public class TerminalView {
     }
 
     public void escreverGradual(String texto){
-        for (int i = 0; i < texto.length(); i++) {
-            System.out.print(texto.charAt(i));
-            try{
-                //pausa a escrita no terminal pelo tempo definido
-                if (this.config.getIntervalo().equals("0")) {
+        if (this.config.getIntervalo().equals("0")) {
+            for (int i = 0; i < texto.length(); i++) {
+                System.out.print(texto.charAt(i));
+                try {
                     Thread.sleep(50);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    System.err.println("A animação foi interrompida.");
+
                 }
-                else{
-                    Thread.sleep(100);
-                }
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt();
-                System.err.println("A animação foi interrompida.");
             }
+        }
+        else{
+            System.out.println(texto);
         }
     }
 

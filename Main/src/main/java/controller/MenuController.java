@@ -24,7 +24,7 @@ public class MenuController {
     public void startMenu(Config config) {
         config.executeColor();
         String option = "0";
-        while(!option.equals("4")){
+        while(!option.equals("5")){
             menuView.showMenu();
             option = menuView.readOption();
             switch(option) {
@@ -51,6 +51,8 @@ public class MenuController {
                     configController.option();
                     break;
                 case "4":
+                    break;
+                case "5":
                     //Encerra o jogo
                     break;
         }

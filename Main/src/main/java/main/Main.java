@@ -1,5 +1,6 @@
 package main;
 
+import model.Conquista;
 import view.MenuView;
 import view.TerminalView;
 import view.ConfigView;
@@ -20,7 +21,8 @@ public class Main {
 
         ObjectMapper mapper = new ObjectMapper();
         SaveRepository save = new SaveRepository(mapper);
-        Config config = save.ReadConfig();
+        Config config = save.readFile("saves/config.json",Config.class,new Config("0","0","0"));
+        Conquista conquista = save.readFile("saves/conquistas.json", Conquista.class,new Conquista("0"));
 
 
 
