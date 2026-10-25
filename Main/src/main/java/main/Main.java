@@ -35,9 +35,9 @@ public class Main {
         JogoService jogoService = new JogoService(capituloRepo);
 
         ConfigController configController = new ConfigController(configView, config, save);
-        JogoController jogoController = new JogoController(terminalView, jogoService);
+        JogoController jogoController = new JogoController(terminalView, jogoService,conquista,save);
         MenuController menuController = new MenuController(menuView, jogoService, jogoController,configController);
 
-        menuController.startMenu(config);
+        menuController.startMenu(config,conquista);
     }
 }

@@ -23,15 +23,15 @@ public class SaveRepository {
             return padrao;
         }
     }
-    public <E> void writeFile(String caminho, E classe){
+    public <E> void writeFile(String caminho, E objeto){
 
         try {
             mapper.writerWithDefaultPrettyPrinter()
-                    .writeValue(new File(caminho),classe);
+                    .writeValue(new File(caminho),objeto);
 
-            System.out.println("Ficheiro JSON guardado com sucesso!");
+            System.out.println("arquivo JSON salvo com sucesso!");
         } catch (IOException e) {
-            System.err.println("Erro ao escrever no JSON: " + e.getMessage());
+            System.err.println("Erro ao escrever no arquivo: " + e.getMessage());
     }
 }
 }

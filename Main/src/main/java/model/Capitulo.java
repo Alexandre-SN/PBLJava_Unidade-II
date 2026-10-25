@@ -15,6 +15,9 @@ public class Capitulo {
         this.cenas = new ArrayList<>();
     }
 
+    public int getNumero(){
+        return numero;
+    }
     public void addCena(Cena cena) {
         this.cenas.add(cena);
     }

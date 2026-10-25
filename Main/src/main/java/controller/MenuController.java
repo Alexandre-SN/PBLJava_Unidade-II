@@ -1,6 +1,7 @@
 package controller;
 
 import model.Config;
+import model.Conquista;
 import view.MenuView;
 import service.JogoService;
 import view.ConfigView;
@@ -21,7 +22,7 @@ public class MenuController {
         this.configController = configController;
     }
 
-    public void startMenu(Config config) {
+    public void startMenu(Config config, Conquista conquista) {
         config.executeColor();
         String option = "0";
         while(!option.equals("5")){
@@ -51,6 +52,7 @@ public class MenuController {
                     configController.option();
                     break;
                 case "4":
+                    menuView.showConquista(conquista);
                     break;
                 case "5":
                     //Encerra o jogo

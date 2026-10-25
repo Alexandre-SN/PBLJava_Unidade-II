@@ -1,10 +1,6 @@
 package service;
 
-import model.Capitulo;
-import model.Cena;
-import model.Jogo;
-import model.Opcao;
-import model.Protagonista;
+import model.*;
 import repository.CapituloRepository;
 
 

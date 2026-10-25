@@ -1,5 +1,7 @@
 package view;
 
+import model.Conquista;
+
 import java.util.Scanner;
 
 
@@ -17,6 +19,23 @@ public class MenuView {
             3 - Opções
             4 - Conquistas
             5 - Sair
+            ====================
+            """);
+    }
+
+    public void showConquista(Conquista conquista){
+        System.out.println("""
+            ====================
+                 Conquistas
+            ====================
+            """);
+        if (conquista.getExplorador().equals("0")){
+            System.out.println("1 - ??????");
+        }
+        else{
+            System.out.println("1 - Explorador:visitou todas as salas do apartamento");
+        }
+        System.out.println("""
             ====================
             """);
     }
